@@ -13,7 +13,7 @@ describe("user",() => {
     const res = await request(app).post("/user").send(user);
     expect(res.statusCode).toBe(200);
   }, 15000);
-    it("It returns status code 500 if name  , age and email is not passed", async () => {
+    it("It returns status code 500 if name , age and email is not passed", async () => {
     const value = { Name: "Raja", age:26,email: "raja@gmail.com" };
     const res = await request(app).post("/user").send();
     expect(res.statusCode).toBe(500);
