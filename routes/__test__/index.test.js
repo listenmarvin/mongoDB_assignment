@@ -9,7 +9,6 @@ describe("user",() => {
       age: "15",
       email: "Rahul@example.com"
     };
-
     const res = await request(app).post("/user").send(user);
     expect(res.statusCode).toBe(200);
   }, 15000);
@@ -38,16 +37,16 @@ describe("user",()=>{
       const res = await request(app).put(`/user/${userId}`).send(userData);
       expect(res.statusCode).toEqual(200);
     });
-  });
-  // test case for failed update
-describe("updateUser", () => {
-    it("returns status code 500 if data is not updated successfully", async () => {
+     // test case for failed update
+     it("returns status code 500 if data is not updated successfully", async () => {
       const userId = "6452280c60e140647844463e1"; 
       const userData = { Name: "Rakesh" }; 
       const res = await request(app).put(`/user/${userId}`).send(userData);
       expect(res.statusCode).toEqual(500);
     });
   });
+ 
+
 
  
 
